@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         newBallImage()
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
         newBallImage()
             
@@ -43,5 +43,9 @@ class ViewController: UIViewController {
             randomBallNumber = Int(arc4random_uniform(5))
             
             imageView.image = UIImage(named:ballArray[randomBallNumber])
+    }
+
+    override open var shouldAutorotate: Bool {
+        return false
     }
 }
